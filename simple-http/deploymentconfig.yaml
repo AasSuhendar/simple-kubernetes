@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: simple-http
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simple-http
+    spec:
+      containers:
+      - name: simple-http
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+
